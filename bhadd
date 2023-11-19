@@ -1,0 +1,15 @@
+--[[
+PRESS F FOR THE BALL TO TELEPORT TO YOU
+THIS ONLY WORKS WHEN NOBODY HAS THE BALL.
+]]
+
+local UserInputService = game:GetService("UserInputService")
+local function onInputBegan(input, gameProcessed)
+   if not gameProcessed then
+       if input.KeyCode == Enum.KeyCode.F then
+       game:GetService("Workspace").SoccerBall.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+       end
+      end
+end
+     
+UserInputService.InputBegan:Connect(onInputBegan)
